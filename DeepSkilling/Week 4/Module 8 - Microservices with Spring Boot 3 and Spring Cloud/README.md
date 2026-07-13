@@ -1,6 +1,6 @@
 # Microservices Hands-on Exercise — Account & Loan
 
-This zip contains two independent Spring Boot Maven projects, each with its own `pom.xml`:
+This Folder contains two independent Spring Boot Maven projects, each with its own `pom.xml`:
 
 ```
 microservices/
