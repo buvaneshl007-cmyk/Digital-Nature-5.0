@@ -1,0 +1,10 @@
+<section class="detail" *ngIf="course$ | async as course; else loading">
+  <a routerLink="/courses">&larr; Back to courses</a>
+  <h2>{{ course.name }}</h2>
+  <p>Code: {{ course.code }}</p>
+  <p>Credits: {{ course.credits }}</p>
+  <p>Status: {{ course.gradeStatus }}</p>
+</section>
+<ng-template #loading>
+  <p>Loading course...</p>
+</ng-template>

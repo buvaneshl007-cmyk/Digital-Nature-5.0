@@ -1,0 +1,27 @@
+<section class="hero">
+  <h1>{{ portalName }}</h1>
+  <p>Browse courses, manage enrollments, and track your academic progress — all in one place.</p>
+
+  <div class="stats">
+    <div class="stat">
+      <strong>{{ (coursesCount$ | async)?.length ?? 12 }}</strong>
+      <span>Courses Available</span>
+    </div>
+    <div class="stat">
+      <strong>3</strong>
+      <span>Enrolled</span>
+    </div>
+    <div class="stat">
+      <strong>3.8</strong>
+      <span>GPA</span>
+    </div>
+  </div>
+
+  <button type="button" [disabled]="!isPortalActive" (click)="onEnrollClick()">Enroll Now</button>
+  <p *ngIf="message">{{ message }}</p>
+
+  <div class="search">
+    <input type="text" [(ngModel)]="searchTerm" placeholder="Search courses..." />
+    <p>Searching for: {{ searchTerm }}</p>
+  </div>
+</section>

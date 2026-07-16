@@ -1,0 +1,28 @@
+Hands-On 1 — Task 1, Step 2
+File purpose notes (Student Course Portal)
+
+angular.json          - The Angular CLI workspace configuration: build targets, file
+                         replacements, asset globs, style/script bundling options, and the
+                         production budgets (see Step 5 below).
+tsconfig.json          - The root TypeScript configuration shared by the whole workspace
+                         (compiler options like strict mode, target, module resolution).
+tsconfig.app.json      - TypeScript configuration specifically for the application build
+                         (extends tsconfig.json, sets the app's entry files/output).
+package.json           - Lists npm dependencies/devDependencies and defines CLI scripts
+                         (ng, start, build, watch, test, api).
+src/main.ts             - The application entry point. It bootstraps the root standalone
+                         component (App) using bootstrapApplication() and appConfig.
+src/app/app.config.ts   - The standalone equivalent of AppModule: registers providers
+                         (router, HttpClient, NgRx store/effects, etc.) for the whole app.
+src/app/app.ts          - The root component (selector app-root). Hosts the header and the
+                         <router-outlet> that renders whichever route is active.
+src/index.html          - The single HTML page for the SPA. Contains the <app-root> tag
+                         where Angular bootstraps the application.
+
+Hands-On 1 — Task 1, Step 5
+angular.json budgets (architect > build > configurations > production):
+  maximumWarning  - The bundle size (per budget entry, e.g. initial or component style)
+                    at which the CLI prints a build WARNING but still succeeds.
+  maximumError    - The bundle size at which the CLI FAILS the production build outright,
+                    forcing you to reduce bundle size before shipping.
+These thresholds exist to catch bundle bloat early, before it reaches production users.
